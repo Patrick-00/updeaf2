@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regra</title>
+
+<head>
+  <link rel="shortcut icon" href="./Logo/updeaf.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonte Passero One  -->
+  <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- font-abodes -->
+  <link rel="stylesheet" href="https://use.typekit.net/mik6fbk.css">
+  <!-- font-abodes -->
+  <link rel="stylesheet" href="https://use.typekit.net/mik6fbk.css">
+
+  <!--Css-->
+  <link rel="stylesheet" href="regra.css" />
+  <!-- JS -->
+  <script src="regra.js"></script>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <!-- Botão Menu (mobile) -->
+    <button class="menu-icon" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Logo -->
+    <a href="regra.html" class="logo-link" aria-label="Home">
+      <img src="./logo/minhafoto.png" alt="UpDeaf" class="logo">
+    </a>
+
+    <!-- Links (desktop) -->
+    <nav class="menu-links" aria-label="Menu principal">
+      <a href="index.html">Up Deaf</a>
+      <a href="#noticias">Notícias</a>
+      <a href="competicao.html">Jogos</a>
+      <a href="regra.html">Regra</a>
+      <a href="cadastro.html">Cartão</a>
+      <a href="faq.html">Contato</a>
+    </nav>
+
+    <!-- Login + Dropdown -->
+    <div class="login-area">
+      <button class="login" id="btnUser" aria-label="Menu do usuário" aria-expanded="false">
+        <img src="./logo/perfil.png" class="user-photo" alt="Perfil">
+        <span>Entrar</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+
+      <div class="dropdown" id="dropdownUser" aria-label="Opções do usuário">
+        <a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a>
+        <a href="#"><i class="fa-solid fa-gear"></i> Configurações</a>
+        <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE (fica escondido até clicar no ☰) -->
+  <nav class="menu-mobile" id="menuMobile" aria-label="Menu mobile">
+    <a href="index.html">Up Deaf</a>
+    <a href="#noticias">Notícias</a>
+    <a href="competicao.html">Jogos</a>
+    <a href="regra.html">Regra</a>
+    <a href="cadastro.html">Cartão</a>
+    <a href="faq.html">Contato</a>
+  </nav>
+
+  <!-- FUNDO ESCURO (quando abre menu mobile) -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- -----------navegação---------------->
+</body>
+
+<!-- ================= REGRAS ================= -->
+
+<body>
+
+  <section class="secao regras">
+    <h2 class="titulo-fora">REGRAS</h2>
+
+    <div class="frame">
+      <div class="frame-content">
+
+        <div class="grid">
+          <!-- TEXTO -->
+          <div class="texto">
+            <p>
+              No jogo é proibido usar hack, cheat ou qualquer programa externo,
+              assim como aproveitar bugs para ganhar vantagem. Todos devem jogar
+              com respeito, sem xingamentos, ofensas ou atitudes que prejudiquem
+              os outros. Também não é permitido trapacear, fazer spam no chat
+              ou causar confusão. Quem não seguir essas regras poderá ser removido
+              ou banido.
+            </p>
+            <p class="combina">Combina?</p>
+          </div>
+
+          <!-- VÍDEO -->
+          <div class="video">
+            <p class="video-titulo">Tradução para Libras</p>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Tradução para Libras" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="botoes">
+          <button class="btn roxo">SIM</button>
+          <button class="btn vermelho">NÃO</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JOGADORES ================= -->
+  <section class="secao jogadores">
+    <h2 class="titulo-fora jogadores-titulo">Jogadores</h2>
+
+    <div class="frame frame-jogadores">
+      <div class="frame-content frame-content-jogadores">
+
+        <div class="jogadores-grid">
+          <!-- SQUAD -->
+          <div class="jogador-card">
+            <img class="jogador-icone" src="./images/squad.png" alt="Ícone Squad">
+            <button class="btn btn-jogador">SQUAD</button>
+          </div>
+
+          <!-- SOLO -->
+          <div class="jogador-card">
+            <img class="jogador-icone" src="./images/solo.png" alt="Ícone Solo">
+            <button class="btn btn-jogador">SOLO</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ESCOLHA UM DIA ================= -->
+  <section class="secao dias">
+    <h2 class="titulo-fora">Escolha um dia para os jogadores</h2>
+
+    <div class="frame frame--padrao">
+      <div class="frame-content frame-content--padrao frame-content--dias">
+
+        <div class="dias-grid">
+
+          <div class="dia-card">
+            <div class="dia-papel">
+              <p>24/11<br>às<br>19:00</p>
+            </div>
+            <button class="btn btn-quero">QUERO</button>
+          </div>
+
+          <div class="dia-card">
+            <div class="dia-papel">
+              <p>05/12<br>às<br>19:00</p>
+            </div>
+            <button class="btn btn-quero">QUERO</button>
+          </div>
+
+          <div class="dia-card">
+            <div class="dia-papel">
+              <p>24/12<br>às<br>19:00</p>
+            </div>
+            <button class="btn btn-quero">QUERO</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONFIRMAÇÃO FINAL ================= -->
+  <section class="secao confirmacao">
+    <h2 class="titulo-fora">Tudo combinado com as informações dos jogadores.</h2>
+
+    <div class="frame frame--padrao">
+      <div class="frame-content frame-content--padrao frame-content--confirmacao">
+
+        <div class="grid confirmacao-grid">
+          <div class="texto confirmacao-texto">
+            <p>
+              Sua equipe é Solo, e todos os jogadores já estão combinados. Todas as
+              informações sobre dias, horários e valores de salário estão descritas.
+              Isso significa que você já leu, entendeu e concorda com o combinado.
+            </p>
+
+            <p class="clique-proximo">Clique em “Próximo”</p>
+          </div>
+
+          <div class="video">
+            <p class="video-titulo">Tradução para Libras</p>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Tradução para Libras" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="confirmacao-footer">
+          <button class="btn btn-proximo">Próximo</button>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-image" id="contato">
+    <div class="footer-overlay">
+
+      <!-- Logos parceiros -->
+      <div class="footer-logos">
+        <img src="./Logo/activisom.png" alt="Activision">
+        <img src="./Logo/highmoom.png moom.png" alt="High Moon">
+        <img src="./Logo/icom.png" alt="Icom">
+        <img src="./Logo/senac.png" alt="Senac">
+      </div>
+
+      <!-- Logo central -->
+      <div class="footer-center">
+        <img src="./logo/updeaf.png" alt="Up Deaf">
+        <p>© 2025 Up Deaf — Feito com ❤️ e Games</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

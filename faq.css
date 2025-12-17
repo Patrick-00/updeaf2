@@ -1,0 +1,877 @@
+/* Reset e Variáveis Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores */
+  --primary: #0044FF;
+  --primary-light: #0055FF;
+  --secondary: #FF4500;
+  --secondary-light: #FF6500;
+  --background: #050505;
+  --card-bg: #0A0A0A;
+  --text-primary: #E0E0E0;
+  --text-secondary: #808080;
+  --border-color: #333333;
+  --accent: #1A1A1A;
+
+      /* Fontes */
+    font-family: "handjet", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+
+    /* Transições */
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+}
+
+/* ====== ESTILO GERAL ====== */
+
+body {
+
+  /* IMPORTANTÍSSIMO: arquivo tem espaço no nome */
+  background-image: url("./images/parededepapel.png");
+  background-position: center;
+  background-size: cover;
+
+  /* ===== RESET ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* =========================
+   NAVBAR (CENTRO REAL)
+========================= */
+
+  .navbar {
+    /* 3 colunas: ESQ (menu+logo) | MEIO (links) | DIR (login) */
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+
+    box-shadow: 1px 4px 22px #ff05f2;
+
+    background: #322F2F;
+    padding: 1px 20px;
+    height: 56px;
+
+
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 25px;
+
+    position: relative;
+    border-radius: 14px;
+    overflow: visible;
+    z-index: 50;
+  }
+
+  /* NEON */
+  .navbar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* cobre toda navbar */
+    z-index: 0;
+    /* fica atrás do conteúdo */
+    pointer-events: none;
+
+    /* linha preta passando */
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.55) 45%,
+        rgba(203, 10, 197, 0.85) 50%,
+        rgba(207, 3, 222, 0.55) 55%,
+        transparent 100%);
+
+    background-size: 240% 100%;
+    animation: blackScan 5s linear infinite;
+    mix-blend-mode: multiply;
+    /* deixa mais “atrás” do roxo */
+    opacity: 0.9;
+  }
+
+  @keyframes neonMove {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  /* ESQ: menu + logo */
+  .menu-icon {
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+    display: none;
+    /* aparece só no mobile */
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+
+  .logo-link {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 12px;
+    /* distância do botão */
+  }
+
+  .logo {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+
+  /* MEIO: links centralizados DE VERDADE */
+  .menu-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    /* distância entre os textos */
+  }
+
+  .menu-links a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-family: "Passero One", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    opacity: 0.95;
+    white-space: nowrap;
+    line-height: 56px;
+  }
+
+  .menu-links a:hover {
+    color: #fff;
+    opacity: 1;
+  }
+
+  /* DIREITA: login */
+  .login-area {
+    position: relative;
+    z-index: 60;
+    justify-self: end;
+    margin-right: 12px;
+  }
+
+  .login {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: "Passero One", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+
+    padding: 8px 14px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .user-photo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 0;
+  }
+
+  /* DROPDOWN */
+  .dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+
+    width: 220px;
+    padding: 8px;
+    border-radius: 14px;
+
+    background: rgba(25, 20, 30, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+
+    z-index: 999;
+    transition: .2s ease;
+  }
+
+  .dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 10px;
+    border-radius: 10px;
+
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    opacity: .95;
+  }
+
+  .dropdown a:hover {
+    background: rgba(255, 255, 255, 0.10);
+    opacity: 1;
+  }
+
+  .dropdown.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* =========================
+   MENU MOBILE + BACKDROP
+========================= */
+  .menu-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: min(330px, 86vw);
+    padding: 90px 16px 16px;
+
+    background: rgba(15, 12, 20, 0.96);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+
+    transform: translateX(-110%);
+    transition: transform .25s ease;
+    z-index: 900;
+  }
+
+  .menu-mobile a {
+    display: block;
+    padding: 12px 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+
+    color: #fff;
+    text-decoration: none;
+    font-family: "Passero One", sans-serif;
+    font-size: 22px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .menu-mobile.open {
+    transform: translateX(0);
+  }
+
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 850;
+  }
+
+  .backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* =========================
+   RESPONSIVO NAV
+========================= */
+  @media (max-width: 950px) {
+    .menu-icon {
+      display: inline-flex;
+    }
+
+    .menu-links {
+      display: none;
+    }
+
+    /* some no mobile */
+    .logo-link {
+      margin-left: 10px;
+    }
+
+    /* aproxima */
+  }
+
+  /* Conteúdo */
+  .content {
+    padding: 30px 5%;
+  }
+
+
+  /* <!-- SEGUNDA TELA LINHA --> */
+
+  .about {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #111;
+    /* corrigido (variáveis não existiam) */
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #000000;
+  }
+
+  .page-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 10px 80px;
+  }
+
+  /* ====== CARDS EM FORMA DE PASTA ====== */
+
+  .card-folder {
+    background: #070505e6;
+    border-radius: 26px;
+    position: relative;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+  }
+
+  /* “pezinho” de pasta embaixo */
+  .card-folder::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 80px;
+    height: 10px;
+    background: #2a2222e6;
+    border-radius: 0 0 10px 10px;
+  }
+
+  /* corpo do card */
+  .card-folder-body {
+    padding: 25px 30px 25px;
+  }
+
+  /* ====== LINHA 1 – ATENDIMENTO ====== */
+
+  .linha-atendimento {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 80px auto 90px;
+    padding: 0 5%;
+    color: #ffffff;
+  }
+
+  .atendimento {
+    flex: 1;
+    max-width: 320px;
+  }
+
+  .atendimento .card-folder-body {
+    padding: 30px 25px;
+    text-align: center;
+  }
+
+  .icone-topo i {
+    font-size: 38px;
+    margin-bottom: 12px;
+    color: #980a72;
+  }
+
+  .atendimento h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .atendimento p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* BOTÃO VERMELHO */
+  .btn-vermelho {
+    padding: 8px 24px;
+    background: #9c01bbc6;
+    border: none;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 3px 7px rgba(245, 0, 0, 0.7);
+  }
+
+
+  /* ==================================================
+   REDES SOCIAIS – OVERLAY GAMER (CLICÁVEL)
+   ================================================== */
+
+  .social-overlay-area {
+    margin: 30px auto 20px;
+    /* menos espaço embaixo */
+  }
+
+  .social-box {
+    position: relative;
+    width: min(560px, 92%);
+    margin: 0 auto;
+    padding: 28px 22px;
+    border-radius: 22px;
+    background: rgba(0, 0, 0, 0.65);
+    overflow: hidden;
+
+    /* glow leve */
+    box-shadow: 0 0 18px rgba(123, 6, 131, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Conteúdo normal */
+  .social-conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+  }
+
+  .social-conteudo i {
+    font-size: 28px;
+  }
+
+  .social-conteudo p {
+    font-size: 18px;
+    margin: 0 12px 0 4px;
+    color: #fff;
+  }
+
+  /* Overlay */
+  .social-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(2px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+
+    /* glow forte no overlay */
+    box-shadow: inset 0 0 30px rgba(123, 6, 131, 0.35);
+  }
+
+  /* Hover (desktop) */
+  .social-box:hover .social-overlay {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .social-overlay p {
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  /* Ícones clicáveis */
+  .overlay-icons {
+    display: flex;
+    gap: 50px;
+  }
+
+  .overlay-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    margin: 0 4px;
+
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    text-decoration: none;
+    transition: 0.25s ease;
+  }
+
+  .overlay-icons a i {
+    font-size: 28px;
+    color: #fff;
+    transition: 0.25s ease;
+  }
+
+  /* Hover gamer */
+  .overlay-icons a:hover {
+    transform: translateY(-2px);
+    border-color: rgba(123, 6, 131, 0.65);
+    box-shadow: 0 0 18px rgba(123, 6, 131, 0.45);
+  }
+
+  .overlay-icons a:hover i {
+    color: #7b0683;
+  }
+
+  .overlay-hint {
+    margin-top: 12px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* ==================================================
+   MOBILE – sem hover, overlay aparece sempre
+   ================================================== */
+  @media (max-width: 600px) {
+    .social-overlay {
+      position: static;
+      opacity: 1;
+      transform: none;
+      background: transparent;
+      box-shadow: none;
+      margin-top: 14px;
+    }
+
+    .social-conteudo {
+      display: none;
+    }
+  }
+
+
+  /* ====== TÍTULO REDE SOCIAIS ====== */
+
+  .titulo-sessao {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 25px;
+    color: #111;
+    /* garante legível no fundo claro */
+  }
+
+
+  /* ====== CONTRATO / FORMULÁRIO ====== */
+
+  .linha-contrato {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    /* antes era 30px ou mais */
+
+  }
+
+  .card-folder.contrato {
+    width: min(820px, 100%);
+  }
+
+  .titulo-contrato {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    color: #ffffff;
+  }
+
+  .campo-form {
+    margin-bottom: 18px;
+  }
+
+  .campo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .linha-input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    outline: none;
+    resize: none;
+  }
+
+  .linha-input:focus {
+    border-color: #7b0683;
+    box-shadow: 0 0 0 3px rgba(123, 6, 131, 0.25);
+  }
+
+  /* Se quiser esconder as linhas brancas, descomente:
+.contrato-linhas{ display:none; }
+*/
+
+  .contrato-linhas {
+    margin: 22px 0 16px;
+  }
+
+  .linha-texto {
+    height: 6px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    margin-bottom: 8px;
+  }
+
+  .checkbox-area {
+    margin: 18px 0 24px;
+    font-size: 13px;
+    color: #ffffff;
+  }
+
+  .check-linha {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .check-linha input {
+    margin-top: 3px;
+  }
+
+  .btn-verde {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 26px;
+    border-radius: 10px;
+    background: #51004e;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .btn-verde:hover {
+    transform: translateY(-2px);
+  }
+
+  /* ====== RESPONSIVO ====== */
+
+  @media (max-width: 600px) {
+
+    /* seção contrato mais compacta */
+    .linha-contrato {
+      padding: 18px 5% 40px;
+    }
+
+    /* card ocupa largura certinha */
+    .card-folder.contrato {
+      width: 100%;
+      border-radius: 18px;
+    }
+
+    /* padding interno menor */
+    .contrato .card-folder-body {
+      padding: 18px 16px 22px;
+    }
+
+    /* título menor */
+    .titulo-contrato {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    /* labels */
+    .campo-form label {
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    /* inputs mais confortáveis */
+    .linha-input {
+      padding: 12px 12px;
+      font-size: 14px;
+      border-radius: 10px;
+    }
+
+    /* checkbox texto melhor de ler */
+    .checkbox-area {
+      font-size: 12px;
+      line-height: 1.35;
+      margin: 14px 0 18px;
+    }
+
+    .check-linha {
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .check-linha input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex: 0 0 18px;
+    }
+
+    /* botão */
+    .btn-verde {
+      width: 100%;
+      max-width: 220px;
+      padding: 10px 18px;
+      border-radius: 12px;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .linha-atendimento {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .atendimento {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .atendimento .card-folder {
+      min-height: 240px;
+      /* <<< controla o tamanho igual */
+      display: flex;
+      align-items: center;
+    }
+
+    .atendimento .card-folder-body {
+      width: 100%;
+    }
+  }
+
+  .card-folder::after {
+    left: 20px;
+  }
+
+
+  @media (max-width: 600px) {
+    .page-wrapper {
+      padding: 25px 10px 60px;
+    }
+
+    .card-folder-body {
+      padding: 20px;
+    }
+
+    .social-icone-bottom {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .social-icone-bottom p {
+      font-size: 18px;
+    }
+  }
+
+  /* OverLay Fonte e Dentro de Tela  */
+  .gallery-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  /* imagem */
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* overlay (camada por cima) */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  /* quando passa o mouse */
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+
+  /* link */
+  .overlay a {
+    color: #ff00ff;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+
+  /* ====== FOOTER (corrigido, sem duplicar) ====== */
+  footer {
+    padding: 30px;
+    text-align: center;
+    background-color: transparent;
+    border-top: none;
+    /* remove a linha clara */
+    color: #ffffff;
+  }
+
+  footer .imagem {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  footer .imagem img,
+  footer img {
+    width: 200px;
+    margin-top: 20px;
+  }
+
+}

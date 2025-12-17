@@ -1,0 +1,813 @@
+/* ==================================================
+   RESET
+================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./images/parededepapel.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #ffffff;
+  /* fallback se a imagem falhar */
+  color: #fff;
+      /* Fontes */
+    font-family: "handjet", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+
+    /* Transições */
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+}
+
+/* ==================================================
+   NAVBAR (CENTRO REAL)
+================================================== */
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  background: #322F2F;
+  box-shadow: 1px 4px 22px #ff05f2;
+
+  padding: 1px 20px;
+  height: 56px;
+
+  margin: 25px 5% 0;
+
+  position: relative;
+  border-radius: 14px;
+  z-index: 50;
+}
+
+.navbar>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==================================================
+   NAVBAR – EFEITO NEON
+================================================== */
+.navbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(203, 10, 197, 0.85) 50%,
+      rgba(207, 3, 222, 0.55) 55%,
+      transparent 100%);
+
+  background-size: 240% 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+
+  animation: blackScan 5s linear infinite;
+}
+
+@keyframes blackScan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 240% 50%;
+  }
+}
+
+/* ==================================================
+   NAVBAR – ESQUERDA
+================================================== */
+.menu-icon {
+  display: none;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 26px;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.logo {
+  height: 40px;
+  display: block;
+}
+
+/* ==================================================
+   NAVBAR – CENTRO (LINKS)
+================================================== */
+.menu-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 38px;
+}
+
+.menu-links a {
+  font-family: "Passero One", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #eaeaea;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.95;
+}
+
+.menu-links a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+/* ==================================================
+   NAVBAR – DIREITA (LOGIN + DROPDOWN)
+================================================== */
+.login-area {
+  position: relative;
+  z-index: 60;
+  justify-self: end;
+  margin-right: 12px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 14px;
+  border-radius: 12px;
+
+  font-family: "Passero One", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-photo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* ==================================================
+   DROPDOWN
+================================================== */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 220px;
+  padding: 8px;
+  border-radius: 14px;
+
+  background: rgba(25, 20, 30, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: .2s ease;
+
+  z-index: 999;
+}
+
+.dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  opacity: .95;
+}
+
+.dropdown a:hover {
+  background: rgba(255, 255, 255, 0.10);
+  opacity: 1;
+}
+
+/* ==================================================
+   MENU MOBILE + BACKDROP
+================================================== */
+.menu-mobile {
+  position: fixed;
+  inset: 0 auto 0 0;
+  height: 100dvh;
+  width: min(330px, 86vw);
+
+  padding: 90px 16px 16px;
+
+  background: rgba(15, 12, 20, 0.96);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+
+  transform: translateX(-110%);
+  transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+  z-index: 900;
+}
+
+.menu-mobile.open {
+  transform: translateX(0);
+}
+
+.menu-mobile a {
+  display: block;
+  padding: 12px;
+  margin-bottom: 10px;
+
+  font-family: "Passero One", sans-serif;
+  font-size: 22px;
+
+  color: #fff;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+
+  z-index: 850;
+}
+
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==================================================
+   RESPONSIVO – NAVBAR
+================================================== */
+@media (max-width: 950px) {
+  .menu-icon {
+    display: inline-flex;
+  }
+
+  .menu-links {
+    display: none;
+  }
+
+  .logo-link {
+    margin-left: 10px;
+  }
+}
+
+/* Barra de navegação */
+
+/* TÍTULO DA PÁGINA */
+.page-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 25px;
+}
+
+/* GRID DOS 4 CARDS */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CARD PADRÃO */
+.card {
+  background: #000000;
+  border-radius: 25px;
+  padding: 25px 30px 20px;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.6);
+}
+
+/* TÍTULOS DENTRO DO CARD */
+.card-title {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+
+/* TÍTULOS DENTRO DO CARD SALARIO */
+.titulo {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* TÍTULOS DENTRO DO CARD Meu cadastro - Conta Pessoal */
+.page-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+/* INPUT COM LINHA */
+.linha-input {
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid #8118b6;
+  /*Cor Linha*/
+  background: transparent;
+  padding: 6px 0 4px;
+  outline: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+}
+
+.linha-input::placeholder {
+  color: #fcfcfc;
+  opacity: 50%;
+}
+
+/* BOTÕES AZUIS */
+.btn {
+  margin-top: 18px;
+  padding: 9px 24px;
+  background: #007fdc;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+
+/* botão centralizado embaixo do card */
+.btn-full {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* botão que fica mais pro meio (tipo da imagem) */
+.btn-center {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn:hover {
+  background: #0096ff;
+}
+
+.btn:active {
+  transform: translateX(-50%) translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* CARD 2 – COM ABAS E ÍCONES */
+.card-tabs {
+  position: relative;
+  padding-top: 60px;
+}
+
+.tabs-top {
+  position: absolute;
+  top: -15px;
+  left: 25px;
+  right: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-icon {
+  background: #000000;
+  padding: 10px 14px;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+}
+
+/* ajusta espaço depois das abas */
+.space-top {
+  margin-top: 5px;
+}
+
+/* CARD 4 – SALÁRIO COM FUNDO DIFERENTE */
+.card-bg {
+  background-image: url("./Bomba_1.gif");
+  /* coloque a imagem do card */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 18px;
+
+}
+
+/* camada escura por cima da imagem */
+.card-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.card-bg>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* topo do card salário */
+.salario-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.salario-icone {
+  font-size: 22px;
+}
+
+.salario-icone.direita {
+  margin-left: auto;
+}
+
+.salario-titulo {
+  margin: 0 10px;
+}
+
+/* RESPONSIVO: em tela pequena, vira 1 card por linha */
+@media (max-width: 750px) {
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+}
+
+/* CARD ATENÇÃO */
+.card-atencao {
+  margin: 40px;
+  width: 650px;
+  background: #000000d5;
+  padding: 25px 25px 20px;
+  border-radius: 25px;
+  margin: auto;
+  margin-top: 100px;
+
+
+  /* fundo com imagem (coloque sua imagem original aqui) */
+  background-image: url("./Img/");
+  background-size: cover;
+  background-position: center;
+
+  color: rgb(255, 255, 255);
+  text-align: center;
+  position: relative;
+
+  /* borda azul embaixo */
+  border-bottom: 4px solid #007bdb;
+
+  /* sombra */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.card-atencao .titulo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+
+.card-atencao p {
+  font-size: 14px;
+}
+
+/* ===== CHECKBOX ===== */
+.check-atencao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.check-atencao input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* ===== ATENÇÃO ANIMAÇÃO ===== */
+#cardAtencao.oculto {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* ===== AGRADECIMENTO ===== */
+#paginaAgradecimento {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+#paginaAgradecimento.ativo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== BOTÃO CONFIRMAR ===== */
+.btn-confirmar {
+  margin-top: 15px;
+  padding: 10px 30px;
+  background: #007bdb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-confirmar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* AGRADECIMENTO começa invisível */
+#paginaAgradecimento {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* quando ativar */
+#paginaAgradecimento.ativo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ATENÇÃO some suavemente */
+#cardAtencao {
+  transition: opacity 0.4s ease;
+}
+
+#cardAtencao.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Gif Bomba */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+/* GIF */
+.gif {
+  width: 300px;
+  max-width: 90%;
+}
+
+/* CAIXA DO TÍTULO */
+.caixa-titulo {
+  padding: 12px 26px;
+  background: #0a6bdc;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.caixa-titulo {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: #0a6bdc;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ==================================================
+   MENU MOBILE + BACKDROP
+================================================== */
+.menu-mobile {
+    position: fixed;
+    inset: 0 auto 0 0;
+    height: 100dvh;
+    width: min(330px, 86vw);
+
+    padding: 90px 16px 16px;
+
+    background: rgba(15, 12, 20, 0.96);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+
+    transform: translateX(-110%);
+    transition: transform .3s cubic-bezier(.4,0,.2,1);
+    z-index: 900;
+}
+
+.menu-mobile.open {
+    transform: translateX(0);
+}
+
+.menu-mobile a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 10px;
+
+    font-family: "Passero One", sans-serif;
+    font-size: 22px;
+
+    color: #fff;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+
+    z-index: 850;
+}
+
+.backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== ATENÇÃO RESPONSIVO ===== */
+@media (max-width: 768px) {
+
+  .card-atencao {
+    width: 100%;
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .card-atencao .titulo {
+    font-size: 16px;
+  }
+
+  .card-atencao p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .check-atencao {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+.check-atencao input {
+  flex-shrink: 0;
+}
+
+}
+
+/* ==================================================
+   RESPONSIVO – NAVBAR
+================================================== */
+@media (max-width: 950px) {
+    .menu-icon {
+        display: inline-flex;
+    }
+
+    .menu-links {
+        display: none;
+    }
+
+    .logo-link {
+        margin-left: 10px;
+    }
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+.footer-image {
+    width: 100%;
+    margin-top: 80px;
+    padding: 60px 0 40px;
+    
+}
+
+.footer-overlay {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 5%;
+}
+
+.footer-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-logos img {
+    width: 160px;
+    margin: auto;
+    display: block;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-center img {
+    width: 130px;
+    margin-bottom: 12px;
+}
+
+.footer-center p {
+    font-family: "Passero One", sans-serif;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ==================================================
+   RESPONSIVO – FOOTER
+================================================== */
+@media (max-width: 900px) {
+    .footer-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .footer-logos {
+        grid-template-columns: 1fr;
+    }
+}

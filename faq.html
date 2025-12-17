@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faq</title>
+
+<head>
+  <link rel="shortcut icon" href="./logo/updeaf.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonte Passero One  -->
+  <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+  <!-- font-abodes -->
+  <link rel="stylesheet" href="https://use.typekit.net/mik6fbk.css">
+  <!--Css-->
+  <link rel="stylesheet" href="faq.css" />
+  <!-- js -->
+  <script src="faq.js"></script>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <button class="menu-icon" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <a href="faq.html" class="logo-link" aria-label="Home">
+      <img src="./logo/minhafoto.png" alt="Logo da UpDeaf" class="logo">
+    </a>
+
+    <nav class="menu-links" aria-label="Menu principal">
+      <a href="index.html">Up Deaf</a>
+      <a href="#noticias">Notícias</a>
+      <a href="competicao.html">Jogos</a>
+      <a href="regra.html">Regra</a>
+      <a href="cadastro.html">Cartão</a>
+      <a href="faq.html">Contato</a>
+    </nav>
+
+    <div class="login-area">
+      <button class="login" id="btnUser" aria-label="Menu do usuário" aria-expanded="false">
+        <img src="./logo/perfil.png" class="user-photo" alt="Foto do perfil">
+        <span>Entrar</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+
+      <div class="dropdown" id="dropdownUser">
+        <a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a>
+        <a href="#"><i class="fa-solid fa-gear"></i> Configurações</a>
+        <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <nav class="menu-mobile" id="menuMobile">
+    <a href="index.html">Up Deaf</a>
+    <a href="#noticias">Notícias</a>
+    <a href="competicao.html">Jogos</a>
+    <a href="regra.html">Regra</a>
+    <a href="cadastro.html">Cartão</a>
+    <a href="faq.html">Contato</a>
+  </nav>
+
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- ATENDIMENTO -->
+  <section class="linha-atendimento">
+    <div class="card-folder atendimento">
+      <div class="card-folder-body">
+        <div class="icone-topo"><i class="fa-solid fa-hands"></i></div>
+        <h3>Libras:</h3>
+        <p>Atendimento 24 horas. Do que você precisa?</p>
+        <button class="btn-vermelho" type="button"> <a href="https://www.icom.app/">CLICAR</a></button>
+      </div>
+    </div>
+
+    <div class="card-folder atendimento">
+      <div class="card-folder-body">
+        <div class="icone-topo"><i class="fa-solid fa-envelope"></i></div>
+        <h3>E-mail:</h3>
+        <p>Posso ajudar você.</p>
+        <button class="btn-vermelho" type="button">CLICAR</button>
+      </div>
+    </div>
+
+    <div class="card-folder atendimento">
+      <div class="card-folder-body">
+        <div class="icone-topo"><i class="fa-solid fa-comments"></i></div>
+        <h3>Chat:</h3>
+        <p>Atendimento 24 horas. Como posso te ajudar?</p>
+        <button class="btn-vermelho" type="button">CLICAR</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDES SOCIAIS -->
+  <section class="social-overlay-area">
+    <h2 class="titulo-sessao">Redes sociais</h2>
+
+    <div class="social-box">
+      <div class="social-conteudo">
+        <i class="fa-brands fa-x-twitter"></i>
+        <p>UpDeaf</p>
+        <i class="fa-brands fa-youtube"></i>
+        <p>UpDeaf</p>
+        <i class="fa-brands fa-discord"></i>
+        <p>UpDeaf</p>
+      </div>
+
+      <div class="social-overlay">
+        <div class="overlay-icons">
+          <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X / Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://discord.com/" target="_blank" rel="noopener" aria-label="Discord">
+            <i class="fa-brands fa-discord"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRATO -->
+  <section class="linha-contrato">
+    <div class="card-folder contrato">
+      <form class="card-folder-body" action="#" method="post">
+        <h2 class="titulo-contrato">CONTRATO</h2>
+
+        <div class="campo-form">
+          <label for="nome">Nome completo</label>
+          <input id="nome" type="text" class="linha-input">
+        </div>
+
+        <div class="campo-form">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" class="linha-input">
+        </div>
+
+        <div class="campo-form">
+          <label for="mensagem">Explicação</label>
+          <textarea id="mensagem" class="linha-input" rows="4"></textarea>
+        </div>
+
+        <div class="checkbox-area">
+          <label class="check-linha">
+            <input type="checkbox">
+            <span>Li e concordo com a política de privacidade.</span>
+          </label>
+
+          <label class="check-linha">
+            <input type="checkbox">
+            <span>Desejo receber e-mails de marketing.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-verde">ENVIAR</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-image" id="contato">
+    <div class="footer-overlay">
+
+      <!-- Logos parceiros -->
+      <div class="footer-logos">
+        <img src="./logo/activisom.png" alt="activision">
+        <img src="./logo/highmoom.png" alt="highmoon">
+        <img src="./logo/icom.png" alt="icon">
+        <img src="./logo/senac.png" alt="senac">
+      </div>
+
+      <!-- Logo central -->
+      <div class="footer-center">
+        <img src="./Logo/updeaf.png" alt="Up Deaf">
+        <p>© 2025 Up Deaf — Feito com ❤️ e Games</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

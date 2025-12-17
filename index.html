@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPDEAF</title>
+
+<head>
+    <link rel="shortcut icon" href="./Logo/updeaf.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Fonte Passero One  -->
+    <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- font-abodes -->
+    <link rel="stylesheet" href="https://use.typekit.net/mik6fbk.css">
+
+    <!--Css-->
+    <link rel="stylesheet" href="style.css" />
+   
+    <script src="script.js"></script>
+</head>
+
+<!-- ---------------navegação---------------------->
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <!-- Botão Menu (mobile) -->
+        <button class="menu-icon" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a href="index.html" class="logo-link" aria-label="Home">
+            <img src="./logo/minhafoto.png" alt="UpDeaf" class="logo">
+        </a>
+
+        <!-- Links (desktop) -->
+        <nav class="menu-links" aria-label="Menu principal">
+            <a href="index.html">UpDeaf</a>
+            <a href="#noticias">Notícias</a>
+            <a href="competicao.html">Jogos</a>
+            <a href="regra.html">Regra</a>
+            <a href="cadastro.html">Cartão</a>
+            <a href="faq.html">Contato</a>
+        </nav>
+
+        <!-- Login + Dropdown -->
+        <div class="login-area">
+            <button class="login" id="btnUser" aria-label="Menu do usuário" aria-expanded="false">
+                <img src="./logo/perfil.png" class="user-photo" alt="Perfil">
+                <span>Entrar</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown" id="dropdownUser" aria-label="Opções do usuário">
+                <a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Configurações</a>
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU MOBILE (fica escondido até clicar no ☰) -->
+    <nav class="menu-mobile" id="menuMobile" aria-label="Menu mobile">
+        <a href="index.html">Up Deaf</a>
+        <a href="#noticias">Notícias</a>
+        <a href="competicao.html">Jogos</a>
+        <a href="regra.html">Regra</a>
+        <a href="cadastro.html">Cartão</a>
+        <a href="faq.html">Contato</a>
+    </nav>
+
+    <!-- FUNDO ESCURO (quando abre menu mobile) -->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- -----------navegação---------------->
+
+    <!-- < TELA PRINCIPAL  -->
+
+    <body>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="hero">
+            <div class="video-background">
+                <video autoplay muted loop>
+                    <source src="./images/programa.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <div class="hero-content">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="container hero-container">
+                    <div class="hero-content">
+                        <h2 class="hero-title">
+                            VAMOS LUTAR ATÉ <br>
+                            A VITÓRIA, ATÉ <br>
+                            CONQUISTAR <br>
+                            <span class="hero-highlight">O DINHEIRO!</span>
+                        </h2>
+                        <a href="#" class="btn-primary">AGORA</a>
+                    </div>
+                </div>
+
+                <div class="hero-grid"></div>
+        </section>
+
+        <!-- NEWS SECTION -->
+        <section class="news-section" id="noticias">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">NOTÍCIAS</h2>
+                    <div class="title-line"></div>
+                </div>
+
+                <div class="news-grid">
+                    <!-- Featured Card -->
+                    <div class="news-card featured-card">
+                        <div class="card-background">
+                            <img src="./images/herobg.jpg" alt="Featured News">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <!-- <span class="card-badge">DESTAQUE</span> -->
+                            <h3 class="card-title">NOVA TEMPORADA DE BATALHA</h3>
+                            <p class="card-description">Prepare-se para o maior desafio do ano com prêmios em dinheiro.
+                            </p>
+                            <a href="#" class="btn-secondary">CLICAR</a>
+                        </div>
+                    </div>
+
+                    <!-- Side Menu Cards -->
+                    <div class="side-menu">
+                        <div class="side-card">
+                            <img src="./images/newscard1.jpg" alt="Suba de Nível">
+                            <div class="side-card-overlay"></div>
+                            <div class="side-card-content">
+                                <span class="side-card-title">SUBA DE NÍVEL</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <polyline points="19 12 12 19 5 12" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="side-card">
+                            <img src="./images/newscard2.jpg" alt="Pontuação">
+                            <div class="side-card-overlay"></div>
+                            <div class="side-card-content">
+                                <span class="side-card-title">PONTUAÇÃO</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M6 9H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2h-2" />
+                                    <path d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="side-card">
+                            <img src="./images/newscard3.jpg" alt="Prêmios">
+                            <div class="side-card-overlay"></div>
+                            <div class="side-card-content">
+                                <span class="side-card-title">PRÊMIOS</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M6 9H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2h-2" />
+                                    <path d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="side-card">
+                            <img src="./images/trophycard.jpg" alt="Lista de Jogadores">
+                            <div class="side-card-overlay"></div>
+                            <div class="side-card-content">
+                                <span class="side-card-title">LISTA DE JOGADORES</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Cards Row -->
+                <div class="secondary-cards">
+                    <div class="news-card secondary-card">
+                        <div class="card-background">
+                            <img src="./images/herobg.jpg" alt="Heroes">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-bottom">
+                            <a href="#" class="btn-secondary-full">HERÓIS DÃO CONTA DO PERIGO</a>
+                        </div>
+                    </div>
+
+                    <div class="news-card secondary-card">
+                        <div class="card-background">
+                            <img src="./images/newscard1.jpg" alt="Action">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content-bottom">
+                            <a href="#" class="btn-secondary-full">A AÇÃO NUNCA MORRE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="background-decoration decoration-1"></div>
+            <div class="background-decoration decoration-2"></div>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="footer-image" id="contato">
+            <div class="footer-overlay">
+
+                <!-- Logos parceiros -->
+                <div class="footer-logos">
+                    <img src="./logo/activisom.png" alt="activision">
+                    <img src="./logo/highmoom.png" alt="highmoon">
+                    <img src="./logo/icom.png" alt="Icom">
+                    <img src="./logo/senac.png" alt="senac">
+                </div>
+
+                <!-- Logo central -->
+                <div class="footer-center">
+                    <img src="./logo/updeaf.png" alt="Up Deaf">
+                    <p>© 2025 Up Deaf — Feito com ❤️ e Games</p>
+                </div>
+
+            </div>
+        </footer>
+        
+    </body>
+
+</html>

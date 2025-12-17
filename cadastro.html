@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro</title>
+
+<head>
+    <link rel="shortcut icon" href="./Logo/updeaf.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Fonte Passero One  -->
+    <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+    <!-- font-abodes -->
+    <link rel="stylesheet" href="https://use.typekit.net/mik6fbk.css">
+
+    <!--Css-->
+    <link rel="stylesheet" href="cadastro.css" />
+    <!-- js -->
+    <script src="cadastro.js"></script>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <!-- Botão Menu (mobile) -->
+        <button class="menu-icon" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a href="cadastro.html" class="logo-link" aria-label="Home">
+            <img src="./logo/minhafoto.png" alt="UpDeaf" class="logo">
+        </a>
+
+        <!-- Links (desktop) -->
+        <nav class="menu-links" aria-label="Menu principal">
+            <a href="index.html">Up Deaf</a>
+            <a href="#noticias">Notícias</a>
+            <a href="competicao.html">Jogos</a>
+            <a href="regra.html">Regra</a>
+            <a href="cadastro.html">Cartão</a>
+            <a href="faq.html">Contato</a>
+        </nav>
+
+        <!-- Login + Dropdown -->
+        <div class="login-area">
+            <button class="login" id="btnUser" aria-label="Menu do usuário" aria-expanded="false">
+                <img src="./logo/perfil.png" class="user-photo" alt="Perfil">
+                <span>Entrar</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown" id="dropdownUser" aria-label="Opções do usuário">
+                <a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Configurações</a>
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU MOBILE (fica escondido até clicar no ☰) -->
+    <nav class="menu-mobile" id="menuMobile" aria-label="Menu mobile">
+        <a href="index.html">Up Deaf</a>
+        <a href="#noticias">Notícias</a>
+        <a href="competicao.html">Jogos</a>
+        <a href="regra.html">Regra</a>
+        <a href="cadastro.html">Cartão</a>
+        <a href="faq.html">Contato</a>
+    </nav>
+
+    <!-- FUNDO ESCURO (quando abre menu mobile) -->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- TÍTULO -->
+    <h1 class="page-title">Meu cadastro - Conta Pessoal</h1>
+
+    <!-- CARDS -->
+    <div class="grid-cards">
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <div class="card-title">Nome Completo</div>
+            <input type="text" class="linha-input">
+
+            <div class="card-title">Data de nascimento</div>
+            <input type="date" class="linha-input">
+
+            <div class="card-title">CPF</div>
+            <input type="text" class="linha-input">
+
+            <div class="card-title">RG</div>
+            <input type="text" class="linha-input">
+
+            <button class="btn btn-full">SALVAR</button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card card-tabs">
+            <div class="tabs-top">
+                <div class="tab-icon"><i class="fa-solid fa-credit-card"></i></div>
+                <div class="tab-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="tab-icon"><i class="fa-solid fa-barcode"></i></div>
+            </div>
+
+            <div class="card-title space-top">NÚMERO DE CONTA</div>
+            <input type="text" class="linha-input">
+
+            <div class="card-title">AGÊNCIA</div>
+            <input type="text" class="linha-input">
+
+            <div class="card-title">BANCO</div>
+            <input type="text" class="linha-input">
+
+            <button class="btn btn-center">Confirmação de PAGAMENTO</button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <div class="card-title">E-MAIL</div>
+            <input type="email" class="linha-input">
+
+            <div class="card-title">TELEFONE</div>
+            <input type="text" class="linha-input">
+
+            <div class="card-title">Endereço</div>
+            <input type="text" class="linha-input">
+
+            <button class="btn btn-full">SALVAR</button>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card card-bg">
+            <div class="titulo">SALÁRIO</div>
+
+            <div class="card-title">CPF</div>
+            <input type="text" class="linha-input">
+
+            <div class="card-title">NOME COMPLETO</div>
+            <input type="text" class="linha-input">
+
+            <div class="card-title">PIX</div>
+            <input type="text" class="linha-input">
+
+            <button class="btn btn-center">Confirmação de Salário</button>
+        </div>
+    </div>
+
+    <!-- ATENÇÃO -->
+    <div class="card-atencao" id="cardAtencao">
+
+        <div class="titulo">ATENÇÃO</div>
+
+        <p>
+            Todos os documentos precisam estar corretos.
+            Você deve postar suas informações do Pix.
+        </p>
+
+        <label class="check-atencao">
+            <input type="checkbox" id="confirmarDados">
+            <span>Confirmo que li e que meus dados estão corretos</span>
+        </label>
+
+    </div>
+
+    <!-- AGRADECIMENTO -->
+    <div class="container" id="paginaAgradecimento">
+        <img src="./images/bomba1.gif" class="gif" alt="">
+        <div class="caixa-titulo">Página de agradecimento</div>
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer-image" id="contato">
+        <div class="footer-overlay">
+
+            <!-- Logos parceiros -->
+            <div class="footer-logos">
+                <img src="./logo/activisom.png" alt="Activision">
+                <img src="./logo/highmoom.png" alt="High Moon">
+                <img src="./logo/icom.png" alt="Icom">
+                <img src="./logo/senac.png" alt="Senac">
+            </div>
+
+            <!-- Logo central -->
+            <div class="footer-center">
+                <img src="./logo/updeaf.png" alt="Up Deaf">
+                <p>© 2025 Up Deaf — Feito com ❤️ e Games</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competições de Games</title>
+
+<head>
+    <link rel="shortcut icon" href="./Logo/updeaf.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Fonte Passero One  -->
+    <link href="https://fonts.googleapis.com/css2?family=Passero+One&display=swap" rel="stylesheet">
+
+    <!--Css-->
+    <link rel="stylesheet" href="competicao.css">
+
+    <script src="competicao.js"></script>
+
+    <!-- Fonte-abode -->
+    <link rel="stylesheet" href="https://use.typekit.net/mik6fbk.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <!-- Botão Menu (mobile) -->
+        <button class="menu-icon" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a href="competicao" class="logo-link" aria-label="Home">
+            <img src="./logo/minhafoto.png" alt="UpDeaf" class="logo">
+        </a>
+
+        <!-- Links (desktop) -->
+        <nav class="menu-links" aria-label="Menu principal">
+            <a href="index.html">Up Deaf</a>
+            <a href="#noticias">Notícias</a>
+            <a href="competicao.html">Jogos</a>
+            <a href="regra.html">Regra</a>
+            <a href="cadastro.html">Cartão</a>
+            <a href="faq.html">Contato</a>
+        </nav>
+
+        <!-- Login + Dropdown -->
+        <div class="login-area">
+            <button class="login" id="btnUser" aria-label="Menu do usuário" aria-expanded="false">
+                <img src="./logo/perfil.png" class="user-photo" alt="Perfil">
+                <span>Entrar</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown" id="dropdownUser" aria-label="Opções do usuário">
+                <a href="#"><i class="fa-solid fa-user"></i> Meu perfil</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Configurações</a>
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU MOBILE (fica escondido até clicar no ☰) -->
+    <nav class="menu-mobile" id="menuMobile" aria-label="Menu mobile">
+        <a href="index.html">Up Deaf</a>
+        <a href="#noticias">Notícias</a>
+        <a href="competicao.html">Jogos</a>
+        <a href="regra.html">Regra</a>
+        <a href="cadastro.html">Cartão</a>
+        <a href="faq.html">Contato</a>
+    </nav>
+
+    <!-- FUNDO ESCURO (quando abre menu mobile) -->
+    <div class="backdrop" id="backdrop"></div>
+</body>
+
+<body>
+    <!-- NEWS SECTION -->
+    <section class="news-section" id="noticias">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">JOGOS</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <!-- GRID COM 3 CARDS -->
+            <div class="news-grid-three">
+
+                <!-- CARD 1 -->
+                <div class="news-card featured-card">
+                    <div class="card-background">
+                        <img src="images/callofduty.jpg" alt="Featured News">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">TOP</span>
+                        <h3 class="card-title"> CALL OF DUTY</h3>
+                        <p class="card-description">Tiro, estratégia e combate realista.</p>
+                        <a href="#" class="btn-secondary"> CLICAR</a>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="news-card featured-card card-right">
+                    <div class="card-background">
+                        <img src="images/fortnite.jpg" alt="Card 2">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">FORTNITE</h3>
+                        <p class="card-description">Sobrevivência e ação.</p>
+                        <a href="#" class="btn-secondary">CLICAR</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="news-card featured-card">
+                    <div class="card-background">
+                        <img src="images/battlefield.jpg" alt="Card 3">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BATTLEFIELD</h3>
+                        <p class="card-description">Guerra, veículos, destruição.</p>
+                        <a href="#" class="btn-secondary">CLICAR</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CARROSSEL -->
+    <section class="carousel">
+        <!-- CONTROLES -->
+        <input type="radio" name="slide" id="s1" checked>
+        <input type="radio" name="slide" id="s2">
+        <input type="radio" name="slide" id="s3">
+        <input type="radio" name="slide" id="s4">
+
+        <div class="card">
+            <!-- SLIDES -->
+            <div class="slide slide1">
+                <img src="./images/herobg.jpg" alt="Slide 1">
+                <div class="content">
+                    <span>MMORPG</span>
+                    <h1>DOMI ONLINE</h1>
+                    <p>Mundo aberto, fantasia medieval e multiplayer massivo.</p>
+                    <a href="#" class="btn-secondary">Ver Projeto</a>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <img src="./images/newscard1.jpg" alt="Slide 2">
+                <div class="content">
+                    <span>FPS</span>
+                    <h1>SHRAPNEL</h1>
+                    <p>Combate tático futurista em arenas destrutíveis.</p>
+                    <a href="#" class="btn-secondary">Ver Projeto</a>
+                </div>
+            </div>
+            <div class="slide slide3">
+                <img src="./images/newscard2.jpg" alt="Slide 3">
+                <div class="content">
+                    <span>STRATEGY</span>
+                    <h1>DEFI KINGDOMS</h1>
+                    <p>Construa reinos, lute e domine o ecossistema.</p>
+                    <a href="#" class="btn-secondary">Ver Projeto</a>
+                </div>
+            </div>
+            <div class="slide slide4">
+                <img src="./images/newscard3.jpg" alt="Slide 4">
+                <div class="content">
+                    <span>ADVENTURE</span>
+                    <h1>RUNESEEKER</h1>
+                    <p>Explore terras mágicas repletas de mistérios.</p>
+                    <a href="#" class="btn-secondary">Ver Projeto</a>
+                </div>
+            </div>
+
+            <!-- MINIATURAS -->
+            <div class="thumbs">
+                <label for="s1"><img src="./images/herobg.jpg"></label>
+                <label for="s2"><img src="./images/newscard1.jpg"></label>
+                <label for="s3"><img src="./images/newscard2.jpg"></label>
+                <label for="s4"><img src="./images/newscard3.jpg"></label>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-image" id="contato">
+        <div class="footer-overlay">
+
+            <!-- Logos parceiros -->
+            <div class="footer-logos">
+                <img src="./Logo/activisom.png" alt="Activision">
+                <img src="./logo/highmoom.png" alt="High Moon">
+                <img src="./Logo/icom.png" alt="Icom">
+                <img src="./Logo/senac.png" alt="Senac">
+            </div>
+
+            <!-- Logo central -->
+            <div class="footer-center">
+                <img src="./Logo/updeaf.png" alt="Up Deaf">
+                <p>© 2025 Up Deaf — Feito com ❤️ e Games</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
